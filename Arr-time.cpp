@@ -10,7 +10,7 @@ using namespace std::chrono;
 class TimeElapsed
 {
 	std::chrono::steady_clock::time_point startP, endP; //Точки начала и конца отсчета
-	duration<double,std::ratio<1,1000>> diff; //переменная для подсчета разници (необязательна)
+	duration<double,std::ratio<1,1000>> diff; //переменная для подсчета разници. Параметр std::ratio<1,1> - секунды | std::ratio<1,1000> - милисекунды | std::ratio<1,1000000> - микросекунды | std::ratio<1,1000000000> - наносекунды.
 	bool startInit, endInit; //флаги начала и конца измерения, нужны чтобы пользователь случайно не запросил время, не поставив флаги
 public:
 	TimeElapsed() { startInit = endInit = false; } //обнуляем флаги
